@@ -10,34 +10,196 @@
        The Internet Engineering Task Force (IETF) discussion mailing list furthers the
 development and specification of Internet technology through the general
 discussion of topics for which no dedicated mailing lists exists. As this is the
-most general IETF mailing list, considerable latitude is allowed. Advertising,
-whether to solicit business or promote employment opportunities, falls well
-outside the range of acceptable topics, as do discussions of a personal nature. 
+most general IETF mailing list, considerable latitude is allowed, but there are
+posts that are unsuitable for this mailing list. 
        This document obsoletes RFC3005. 
     " name="description">
-<meta content="xml2rfc 3.6.0" name="generator">
+<meta content="xml2rfc 3.8.0" name="generator">
 <meta content="draft-eggert-bcp45bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.6.0
-    Python 3.8.8
+  xml2rfc 3.8.0
+    Python 3.9.5
     appdirs 1.4.4
-    ConfigArgParse 1.2.3
+    ConfigArgParse 1.3
     google-i18n-address 2.4.0
     html5lib 1.1
     intervaltree 3.1.0
-    Jinja2 2.11.2
+    Jinja2 2.11.3
     kitchen 1.2.6
-    lxml 4.6.2
+    lxml 4.6.3
     pycountry 20.7.3
-    pyflakes 2.2.0
+    pyflakes 2.3.0
     PyYAML 5.4.1
     requests 2.25.1
-    setuptools 51.3.3
+    setuptools 52.0.0
     six 1.15.0
 -->
 <link href="draft-eggert-bcp45bis.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
-<style type="text/css">@import url('https://martinthomson.github.io/i-d-template/fonts.css');
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 html {
   --background-color: #fff;
@@ -87,11 +249,17 @@ body {
   color: var(--title-color);
 }
 #title {
-  padding: 1em 0 0.2em;
   font-size: 32px;
   line-height: 40px;
   clear: both;
 }
+#title, #rfcnum {
+  margin: 1.5em 0 0.2em;
+}
+#rfcnum + #title {
+  margin: 0.2em 0;
+}
+
 h1, h2, h3 {
   font-size: 22px;
   line-height: 27px;
@@ -842,11 +1010,11 @@ address div.right {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">IETF Discussion List Charter</td>
-<td class="right">March 2021</td>
+<td class="right">June 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Eggert</td>
-<td class="center">Expires 30 September 2021</td>
+<td class="center">Expires 25 December 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -862,12 +1030,12 @@ address div.right {
 <a href="https://datatracker.ietf.org/doc/html/rfc3005" class="eref">3005</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-03-29" class="published">29 March 2021</time>
+<time datetime="2021-06-23" class="published">23 June 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Best Current Practice</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-09-30">30 September 2021</time></dd>
+<dd class="expires"><time datetime="2021-12-25">25 December 2021</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -883,9 +1051,8 @@ address div.right {
 <p id="section-abstract-1">The Internet Engineering Task Force (IETF) discussion mailing list furthers the
 development and specification of Internet technology through the general
 discussion of topics for which no dedicated mailing lists exists. As this is the
-most general IETF mailing list, considerable latitude is allowed. Advertising,
-whether to solicit business or promote employment opportunities, falls well
-outside the range of acceptable topics, as do discussions of a personal nature.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+most general IETF mailing list, considerable latitude is allowed, but there are
+posts that are unsuitable for this mailing list.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">This document obsoletes RFC3005.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
 <section class="note" id="section-note.1">
@@ -918,7 +1085,7 @@ list for this draft can be found at <span><a href="https://github.com/larseggert
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 September 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -958,45 +1125,48 @@ list for this draft can be found at <span><a href="https://github.com/larseggert
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="toc ulEmpty compact">
-<li class="toc ulEmpty compact" id="section-toc.1-1.1">
+<nav class="toc"><ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.2">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-charter-for-the-ietf-discus" class="xref">Charter for the IETF Discussion List</a></p>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.3">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="xref">3</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a></p>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.4">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-iana-considerations" class="xref">IANA Considerations</a></p>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.5">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-references" class="xref">References</a></p>
-<ul class="toc ulEmpty compact">
-<li class="toc ulEmpty compact" id="section-toc.1-1.5.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.5.2.1">
                 <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="xref">5.1</a>.  <a href="#name-normative-references" class="xref">Normative References</a></p>
 </li>
-              <li class="toc ulEmpty compact" id="section-toc.1-1.5.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.2">
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="xref">5.2</a>.  <a href="#name-informative-references" class="xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.6">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.7">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-appendix.b" class="xref">Appendix B</a>.  <a href="#name-changes" class="xref">Changes</a></p>
-<ul class="toc ulEmpty compact">
-<li class="toc ulEmpty compact" id="section-toc.1-1.7.2.1">
-                <p id="section-toc.1-1.7.2.1.1"><a href="#section-b.1" class="xref">B.1</a>.  <a href="#name-since-draft-eggert-bcp45bis" class="xref">Since draft-eggert-bcp45bis-00</a></p>
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-b.1" class="xref">B.1</a>.  <a href="#name-since-draft-eggert-bcp45bis" class="xref">Since draft-eggert-bcp45bis-01</a></p>
 </li>
-              <li class="toc ulEmpty compact" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-b.2" class="xref">B.2</a>.  <a href="#name-since-rfc3005" class="xref">Since RFC3005</a></p>
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-b.2" class="xref">B.2</a>.  <a href="#name-since-draft-eggert-bcp45bis-" class="xref">Since draft-eggert-bcp45bis-00</a></p>
+</li>
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.3">
+                <p id="section-toc.1-1.7.2.3.1"><a href="#section-b.3" class="xref">B.3</a>.  <a href="#name-since-rfc3005" class="xref">Since RFC3005</a></p>
 </li>
             </ul>
 </li>
-          <li class="toc ulEmpty compact" id="section-toc.1-1.8">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-appendix.c" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a></p>
 </li>
         </ul>
@@ -1011,39 +1181,41 @@ list for this draft can be found at <span><a href="https://github.com/larseggert
 <p id="section-1-1">The IETF discussion list <span>[<a href="#IETF-DISCUSS" class="xref">IETF-DISCUSS</a>]</span> furthers the development and
 specification of Internet technology through the general discussion of topics
 for which no dedicated mailing lists exists. As this is the most general IETF
-mailing list, considerable latitude is allowed. Advertising, whether to solicit
-business or promote employment opportunities, falls well outside the range of
-acceptable topics, as do discussions of a personal nature.<a href="#section-1-1" class="pilcrow">¶</a></p>
+mailing list, considerable latitude is allowed. However, there are posts that
+are unsuitable for this mailing list. This document defines the charter for the
+IETF discussion list and explains its scope.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">The IETF Note Well <span>[<a href="#NOTE-WELL" class="xref">NOTE-WELL</a>]</span> applies to discussions on the IETF discussion
 list and all other IETF mailing lists, and requires conformance with the IETF
 Guidelines for Conduct <span>[<a href="#RFC7154" class="xref">RFC7154</a>]</span> and the Anti-Harassment Policy <span>[<a href="#IETF-AHP" class="xref">IETF-AHP</a>]</span>,
 among others.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="charter-for-the-ietf-discussion-list">
+<div id="charter">
 <section id="section-2">
       <h2 id="name-charter-for-the-ietf-discus">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-charter-for-the-ietf-discus" class="section-name selfRef">Charter for the IETF Discussion List</a>
       </h2>
-<p id="section-2-1">This list is meant for initial technical discussion only. Discussions that fall
-within the area of any working group, area or well established list should be
-moved to such more specific forums as soon as this is pointed out.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">The IETF discussion list is meant for discussions for which a more appropriate
+list does not exists, such as discussions that do not fall within the area of
+any working group, area or other established list. When discussions are started
+on the IETF discussion list for which such venues do exist, they should be moved
+there as soon as this is pointed out.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">When no dedicated mailing list exists, it may be preferable to request the
 creation of one <span>[<a href="#NON-WG-LISTS" class="xref">NON-WG-LISTS</a>]</span> and only announce the availability of the new
-list on the IETF discussion list.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">In addition to the topics noted above, appropriate postings include:<a href="#section-2-3" class="pilcrow">¶</a></p>
+list on the IETF discussion list and on other related lists, such as area lists.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">Appropriate postings to the IETF discussion list include:<a href="#section-2-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-4.1">Initial discussion of technical issues that are candidates for IETF work, but
 have not yet identified appropriate mailing lists.<a href="#section-2-4.1" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-2-4.2">Questions and clarifications concerning IETF meetings, although most of these
-topics are better brought up on the discussion list for IETF LLC
-administrative issues <span>[<a href="#ADMIN-DISCUSS" class="xref">ADMIN-DISCUSS</a>]</span> or the attendee discussion list for a
-given IETF meeting, such as <span>[<a href="#IETF110-ATTENDEES" class="xref">IETF110-ATTENDEES</a>]</span> for IETF-110.<a href="#section-2-4.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-4.2">Questions and clarifications concerning  practical aspects of IETF meetings,
+although most of these topics are better brought up on the discussion list for
+IETF LLC administrative issues <span>[<a href="#ADMIN-DISCUSS" class="xref">ADMIN-DISCUSS</a>]</span> or the attendee discussion
+list for a given IETF meeting, such as <span>[<a href="#IETF110-ATTENDEES" class="xref">IETF110-ATTENDEES</a>]</span> for IETF-110.<a href="#section-2-4.2" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-2-4.3">Announcements of conferences, events, or activities that are sponsored or
-endorsed by the Internet Society or IETF, although the IETF announcement list
-<span>[<a href="#IETF-ANNOUNCE" class="xref">IETF-ANNOUNCE</a>]</span> is the preferred list for these.<a href="#section-2-4.3" class="pilcrow">¶</a>
+endorsed by the Internet Society or the IETF, although the IETF announcement
+list <span>[<a href="#IETF-ANNOUNCE" class="xref">IETF-ANNOUNCE</a>]</span> is the preferred list for these.<a href="#section-2-4.3" class="pilcrow">¶</a>
 </li>
       </ul>
 <p id="section-2-5">These topics used to be in scope for the IETF discussion list, but have since
@@ -1058,15 +1230,15 @@ list for IETF LLC administrative issues <span>[<a href="#ADMIN-DISCUSS" class="x
       </ul>
 <p id="section-2-7">Inappropriate postings include:<a href="#section-2-7" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-8.1">Unsolicited bulk e-mail<a href="#section-2-8.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2-8.1">Advertising and other unsolicited bulk e-mail<a href="#section-2-8.1" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-2-8.2">Discussion of subjects unrelated to IETF policy, meetings, activities, or
-technical concerns<a href="#section-2-8.2" class="pilcrow">¶</a>
+technical topics<a href="#section-2-8.2" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-2-8.3">Unprofessional commentary, regardless of the general subject<a href="#section-2-8.3" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-2-8.4">Announcements of conferences, events, or activities that are not sponsored or
-endorsed by the Internet Society or IETF.<a href="#section-2-8.4" class="pilcrow">¶</a>
+endorsed by the Internet Society or the IETF.<a href="#section-2-8.4" class="pilcrow">¶</a>
 </li>
       </ul>
 </section>
@@ -1154,7 +1326,7 @@ typical. Complaints regarding their decisions should be referred to the IAB.<a h
 <dd class="break"></dd>
 <dt id="SAA-UPC">[SAA-UPC]</dt>
       <dd>
-<span class="refAuthor">IETF Sergeants-at-Arms</span>, <span class="refTitle">"Unprofessional commentary"</span>, <span>n.d.</span>, <span>&lt;<a href="https://github.com/ietf/saa/blob/master/unprofessional-commentary.md">https://github.com/ietf/saa/blob/master/unprofessional-commentary.md</a>&gt;</span>. </dd>
+<span class="refAuthor">IETF Sergeants-at-Arms</span>, <span class="refTitle">"Unprofessional Commentary"</span>, <span>n.d.</span>, <span>&lt;<a href="https://github.com/ietf/saa/blob/master/unprofessional-commentary.md">https://github.com/ietf/saa/blob/master/unprofessional-commentary.md</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1172,39 +1344,57 @@ typical. Complaints regarding their decisions should be referred to the IAB.<a h
       <h2 id="name-changes">
 <a href="#section-appendix.b" class="section-number selfRef">Appendix B. </a><a href="#name-changes" class="section-name selfRef">Changes</a>
       </h2>
-<div id="since-draft-eggert-bcp45bis-00">
+<div id="since-draft-eggert-bcp45bis-01">
 <section id="section-b.1">
         <h2 id="name-since-draft-eggert-bcp45bis">
-<a href="#section-b.1" class="section-number selfRef">B.1. </a><a href="#name-since-draft-eggert-bcp45bis" class="section-name selfRef">Since draft-eggert-bcp45bis-00</a>
+<a href="#section-b.1" class="section-number selfRef">B.1. </a><a href="#name-since-draft-eggert-bcp45bis" class="section-name selfRef">Since draft-eggert-bcp45bis-01</a>
         </h2>
 <ul class="normal">
-<li class="normal" id="section-b.1-1.1">added introduction, security considerations and IANA considerations sections<a href="#section-b.1-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-b.1-1.1">applied a <a href="https://mailarchive.ietf.org/arch/msg/gendispatch/-U2LWKf0VonKnQXs4jPEqIg_L_A">suggestion from Brian
+Carpenter</a><a href="#section-b.1-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.1-1.2">added "note to readers" with pointers to the discussion list and the repo<a href="#section-b.1-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-b.1-1.2">rephrased beginning of <a href="#charter" class="xref">Section 2</a>, as <a href="https://mailarchive.ietf.org/arch/msg/gendispatch/p73lu-D-WvQrbKBZ80c2T7bbBlQ/">suggested by Stephen
+Farrell</a><a href="#section-b.1-1.2" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.1-1.3">added references to IETF Sergeants-at-Arms procedures<a href="#section-b.1-1.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-b.1-1.3">incorporated a <a href="https://mailarchive.ietf.org/arch/msg/gendispatch/64LgqlIk0h62mAK09Muqn1ccqRE/">suggestion from Christian
+Huitema</a><a href="#section-b.1-1.3" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.1-1.4">added references to various mailing lists for topics that used to be in scope
-for the IETF discussion list but no longer are<a href="#section-b.1-1.4" class="pilcrow">¶</a>
+        </ul>
+</section>
+</div>
+<div id="since-draft-eggert-bcp45bis-00">
+<section id="section-b.2">
+        <h2 id="name-since-draft-eggert-bcp45bis-">
+<a href="#section-b.2" class="section-number selfRef">B.2. </a><a href="#name-since-draft-eggert-bcp45bis-" class="section-name selfRef">Since draft-eggert-bcp45bis-00</a>
+        </h2>
+<ul class="normal">
+<li class="normal" id="section-b.2-1.1">added introduction, security considerations and IANA considerations sections<a href="#section-b.2-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.1-1.5">added references to the Note Well and relevant other policies that apply<a href="#section-b.1-1.5" class="pilcrow">¶</a>
+          <li class="normal" id="section-b.2-1.2">added "note to readers" with pointers to the discussion list and the repo<a href="#section-b.2-1.2" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-b.2-1.3">added references to IETF Sergeants-at-Arms procedures<a href="#section-b.2-1.3" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-b.2-1.4">added references to various mailing lists for topics that used to be in scope
+for the IETF discussion list but no longer are<a href="#section-b.2-1.4" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-b.2-1.5">added references to the Note Well and relevant other policies that apply<a href="#section-b.2-1.5" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>
 </div>
 <div id="since-rfc3005">
-<section id="section-b.2">
+<section id="section-b.3">
         <h2 id="name-since-rfc3005">
-<a href="#section-b.2" class="section-number selfRef">B.2. </a><a href="#name-since-rfc3005" class="section-name selfRef">Since RFC3005</a>
+<a href="#section-b.3" class="section-number selfRef">B.3. </a><a href="#name-since-rfc3005" class="section-name selfRef">Since RFC3005</a>
         </h2>
 <ul class="normal">
-<li class="normal" id="section-b.2-1.1">converted to Markdown and xml2rfc v3<a href="#section-b.2-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-b.3-1.1">converted to Markdown and xml2rfc v3<a href="#section-b.3-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.2-1.2">updated references (as part of the conversion)<a href="#section-b.2-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-b.3-1.2">updated references (as part of the conversion)<a href="#section-b.3-1.2" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.2-1.3">updated author information<a href="#section-b.2-1.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-b.3-1.3">updated author information<a href="#section-b.3-1.3" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-b.2-1.4">various formatting changes<a href="#section-b.2-1.4" class="pilcrow">¶</a>
+          <li class="normal" id="section-b.3-1.4">various formatting changes<a href="#section-b.3-1.4" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>
